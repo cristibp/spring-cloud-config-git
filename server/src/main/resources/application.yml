@@ -1,0 +1,20 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+          git:
+            passphrase: xxxx
+            uri: https://github.com/cristibp/spring-cloud-config-git-sources.git
+            repos:
+              dev:
+                pattern:
+                  - '*dev*'
+                uri: https://github.com/cristibp/spring-cloud-config-git-sources-dev.git
+              test:
+                pattern:
+                  - '*test*'
+                uri: https://github.com/cristibp/spring-cloud-config-git-sources-test.git
+  profiles:
+    active: dev
